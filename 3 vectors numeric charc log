@@ -1,0 +1,23 @@
+# Creating three vectors
+
+# Numeric vector
+num_vec <- c(10, 20, 30, 40)
+# Character vector
+char_vec <- c("Apple", "Banana", "Cherry")
+# Logical vector
+log_vec <- c(TRUE, FALSE, TRUE, TRUE)
+
+# Displaying the content
+cat("Numeric Vector:\n")
+print(num_vec)
+
+cat("Character Vector:\n")
+print(char_vec)
+
+cat("Logical Vector:\n")
+print(log_vec)
+
+# Displaying the type of each vector
+cat("\nData Type of Numeric Vector:", typeof(num_vec), "\n")
+cat("Data Type of Character Vector:", typeof(char_vec), "\n")
+cat("Data Type of Logical Vector:", typeof(log_vec), "\n")
