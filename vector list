@@ -1,0 +1,16 @@
+# Create a vector
+my_vector <- c(2, 4, 6, 8)
+
+# Create a matrix
+my_matrix <- matrix(1:9, nrow = 3)
+
+# Create a function
+my_function <- function(x) {
+  return(x ^ 2)
+}
+
+# Create a list
+my_list <- list(vector = my_vector, matrix = my_matrix, square_function = my_function)
+
+# Print the content of the list
+print(my_list)
