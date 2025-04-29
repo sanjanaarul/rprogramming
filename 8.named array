@@ -1,0 +1,13 @@
+# Create vector of values
+values <- 1:24
+
+# Create array with dimensions and named dimensions
+named_array <- array(values, dim = c(3, 4, 2),
+                     dimnames = list(
+                       Row = c("R1", "R2", "R3"),
+                       Column = c("C1", "C2", "C3", "C4"),
+                       Table = c("Matrix1", "Matrix2")
+                     ))
+
+# Print array
+print(named_array)
