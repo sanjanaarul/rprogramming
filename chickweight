@@ -1,0 +1,28 @@
+# Load built-in dataset
+data(ChickWeight)
+
+# Convert Diet to factor if not already
+ChickWeight$Diet <- as.factor(ChickWeight$Diet)
+
+# Build the multiple regression model
+model <- lm(weight ~ Time + Diet, data = ChickWeight)
+
+# Predict weight for Time = 10 and Diet = 1
+new_data <- data.frame(Time = 10, Diet = factor(1, levels = levels(ChickWeight$Diet)))
+predicted_weight <- predict(model, newdata = new_data)
+cat("Predicted weight for Time = 10 and Diet = 1:", predicted_weight, "\n")
+
+# Find actual weights for Time = 10 and Diet = 1
+actual_data <- subset(ChickWeight, Time == 10 & Diet == 1)
+
+# Predict weights for actual data
+predicted_vals <- predict(model, newdata = actual_data)
+
+# Calculate errors
+errors <- actual_data$weight - predicted_vals
+cat("Errors (Actual - Predicted):\n")
+print(errors)
+
+# Calculate Mean Squared Error (MSE)
+mse <- mean(errors^2)
+cat("Mean Squared Error (MSE):", mse, "\n")
