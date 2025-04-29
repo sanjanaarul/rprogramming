@@ -1,0 +1,6 @@
+random_numbers <- rnorm(1000, mean = 0, sd = 1)  # 1000 numbers with mean 0 and standard deviation 1
+
+# Count occurrences of each value
+count_values <- table(round(random_numbers, 1))  # Round values to 1 decimal place to reduce unique values
+cat("\nOccurrences of each value from normal distribution:\n")
+print(count_values)
