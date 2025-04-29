@@ -1,0 +1,8 @@
+# 1. Extract five levels from a random sample of the LETTERS factor
+set.seed(123)  # Set seed for reproducibility
+random_sample <- sample(LETTERS, 20, replace = TRUE)  # Sample 20 random letters
+factor_sample <- factor(random_sample)  # Convert to factor
+cat("Factor levels from the random sample:\n")
+print(levels(factor_sample))  # Display the factor levels
+cat("\nExtracting five levels from the factor:\n")
+print(levels(factor_sample)[1:5])
