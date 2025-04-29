@@ -1,0 +1,14 @@
+# Create a sample data frame
+my_data <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(25, 30, 22),
+  Score = c(85, 90, 88)
+)
+
+# Save the data frame to a CSV file
+write.csv(my_data, file = "my_data.csv", row.names = FALSE)
+
+# Read and display the contents from the CSV file
+cat("Contents of the saved file:\n")
+read_data <- read.csv("my_data.csv")
+print(read_data)
