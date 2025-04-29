@@ -1,0 +1,28 @@
+data("Titanic")
+titanic_data <- as.data.frame(Titanic)  # Convert to a data frame
+
+# a. Draw a bar chart for "Survived" based on passenger Class
+cat("\nBar chart for 'Survived' based on passenger Class:\n")
+library(ggplot2)
+ggplot(titanic_data, aes(x = Class, fill = Survived)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Survived Passengers by Class", x = "Class", y = "Count")
+
+# b. Modify the plot based on gender of people who survived
+cat("\nBar chart for 'Survived' based on gender of passengers:\n")
+ggplot(titanic_data, aes(x = Class, fill = Sex)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Survived Passengers by Class and Gender", x = "Class", y = "Count")
+
+# c. Histogram for distribution of 'Age' (Note: Titanic data does not have 'Age' directly)
+# Create a random age column and plot histogram
+set.seed(123)
+random_age <- sample(10:80, nrow(titanic_data), replace = TRUE)
+
+# Add age to Titanic data
+titanic_data$Age <- random_age
+
+cat("\nHistogram for distribution of Age:\n")
+ggplot(titanic_data, aes(x = Age)) +
+  geom_histogram(binwidth = 5, fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Distribution of Age of Passengers", x = "Age", y = "Frequency")
