@@ -1,0 +1,3 @@
+random_integers <- sample(-50:50, 10, replace = TRUE)  # Random integers between -50 and 50
+cat("\n10 random integers between -50 and +50:\n")
+print(random_integers)
