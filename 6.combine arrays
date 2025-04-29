@@ -1,0 +1,10 @@
+# Create three arrays
+array1 <- matrix(1:6, nrow = 2, ncol = 3)
+array2 <- matrix(7:12, nrow = 2, ncol = 3)
+array3 <- matrix(13:18, nrow = 2, ncol = 3)
+
+# Combine the arrays row by row
+combined_array <- rbind(array1, array2, array3)
+
+cat("\nCombined array:\n")
+print(combined_array)
