@@ -1,0 +1,18 @@
+# a. 5 x 4 matrix
+cat("\n5 x 4 matrix:\n")
+matrix_5x4 <- matrix(1:20, nrow = 5, ncol = 4)
+print(matrix_5x4)
+
+# b. 3 x 3 matrix with labels, filled by rows
+cat("\n3 x 3 matrix with row-wise fill and labels:\n")
+matrix_3x3 <- matrix(1:9, nrow = 3, byrow = TRUE,
+                     dimnames = list(c("Row1", "Row2", "Row3"),
+                                     c("Col1", "Col2", "Col3")))
+print(matrix_3x3)
+
+# c. 2 x 2 matrix with labels, filled by columns
+cat("\n2 x 2 matrix with column-wise fill and labels:\n")
+matrix_2x2 <- matrix(1:4, nrow = 2, byrow = FALSE,
+                     dimnames = list(c("Row1", "Row2"),
+                                     c("Col1", "Col2")))
+print(matrix_2x2)
