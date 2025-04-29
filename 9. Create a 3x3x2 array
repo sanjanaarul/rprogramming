@@ -1,0 +1,21 @@
+# Define two vectors with 18 elements (9 elements each for two 3x3 matrices)
+vec1 <- c(1:9)
+vec2 <- c(10:18)
+
+# Combine the vectors
+combined_vec <- c(vec1, vec2)
+
+# Create a 3x3x2 array (2 matrices of 3x3)
+my_array <- array(combined_vec, dim = c(3, 3, 2))
+
+# Print the entire array
+cat("Full array:\n")
+print(my_array)
+
+# Print the second row of the second matrix
+cat("\nSecond row of the second matrix:\n")
+print(my_array[2, , 2])
+
+# Print the element at 3rd row and 3rd column of the 1st matrix
+cat("\nElement at 3rd row and 3rd column of the 1st matrix:\n")
+print(my_array[3, 3, 1])
