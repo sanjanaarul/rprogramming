@@ -1,0 +1,36 @@
+# Load dataset
+data(iris)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Create index for 80% training data
+index <- sample(1:nrow(iris), size = 0.8 * nrow(iris))
+
+# Split data
+train_data <- iris[index, ]
+test_data <- iris[-index, ]
+
+# Logistic regression with only 2 classes (binary classification)
+# For that, we’ll subset to only two species for example: setosa vs versicolor
+binary_data <- subset(iris, Species %in% c("setosa", "versicolor"))
+binary_data$Species <- factor(binary_data$Species)
+
+# Split binary data
+set.seed(123)
+index2 <- sample(1:nrow(binary_data), size = 0.8 * nrow(binary_data))
+train_binary <- binary_data[index2, ]
+test_binary <- binary_data[-index2, ]
+
+# Train logistic regression using petal length and width
+model <- glm(Species ~ Petal.Length + Petal.Width, data = train_binary, family = binomial)
+
+# Predict probabilities on test data
+probabilities <- predict(model, newdata = test_binary, type = "response")
+
+# Convert probabilities to predicted class (threshold 0.5)
+predicted_class <- ifelse(probabilities > 0.5, "versicolor", "setosa")
+
+# Create confusion matrix
+confusion_matrix <- table(Predicted = predicted_class, Actual = test_binary$Species)
+print(confusion_matrix)
