@@ -1,0 +1,8 @@
+data(women)  # Load the women dataset
+cat("Original women dataset:\n")
+print(women)
+
+# Create factor for height
+height_factor <- factor(women$height)
+cat("\nFactor for height:\n")
+print(height_factor)
