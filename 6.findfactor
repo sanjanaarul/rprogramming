@@ -1,0 +1,12 @@
+### 1. Find factors of a given number ###
+
+# Function to find factors of a given number
+find_factors <- function(number) {
+  factors <- which(number %% 1:number == 0)
+  return(factors)
+}
+
+# Example usage
+number <- 36
+cat("Factors of", number, "are:\n")
+print(find_factors(number))
